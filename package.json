@@ -1,0 +1,33 @@
+{
+  "name": "pusher-instagram-lego",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=development babel-node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "instagram-node": "^0.5.8",
+    "pusher": "^1.0.6"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "chokidar-socket-emitter": "^0.3.0",
+    "jspm": "^0.16.15"
+  },
+  "jspm": {
+    "dependencies": {
+      "jspm-hot-reloader": "github:capaj/jspm-hot-reloader@master"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  }
+}

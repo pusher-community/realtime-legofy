@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pusher Instagram Legoify</title>
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+      if (location.origin.match(/localhost/)) {
+        System.import('jspm-hot-reloader').then(function(HotReloader) {
+          new HotReloader.default('http://localhost:3002');
+        }).then(function() {
+          System.import('app/main');
+        });
+      } else {
+        System.import('app/main');
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
