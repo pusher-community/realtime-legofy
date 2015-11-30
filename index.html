@@ -6,14 +6,15 @@
     <script src="config.js"></script>
     <script>
       if (location.origin.match(/localhost/)) {
+        System.trace = true
+
         System.import('jspm-hot-reloader').then(function(HotReloader) {
           new HotReloader.default('http://localhost:3002');
-        }).then(function() {
-          System.import('app/main');
         });
-      } else {
-        System.import('app/main');
       }
+    </script>
+    <script>
+      System.import('app/main');
     </script>
   </head>
   <body>

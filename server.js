@@ -1,6 +1,42 @@
+import dotenv from 'dotenv';
+dotenv.load();
+
 import chokidarEventEmitter from 'chokidar-socket-emitter';
 import express from 'express';
 import http from 'http';
+
+import bodyParser from 'body-parser';
+
+import Streamer from 'pusher-twitter-streamer';
+
+const tweetHasImage = (tweet) => {
+  if (!(tweet.entities && tweet.entities.media)) return false;
+  const media = tweet.entities.media;
+  return media.length > 0 && media[0].type === 'photo';
+}
+
+Streamer.prototype.publishFilter = (tweet) => {
+  console.log('got tweet', tweet.id);
+  return tweetHasImage(tweet) ? tweet : undefined;
+}
+
+const streamer = new Streamer({
+  twitter: {
+    consumerKey: process.env.TWITTER_API_KEY,
+    consumerSecret: process.env.TWITTER_API_SECRET,
+    accessTokenKey: process.env.TWITTER_ACCESS_TOKEN,
+    accessTokenSecret: process.env.TWITTER_ACCESS_SECRET
+  },
+  pusher: {
+    appId: process.env.PUSHER_APP_ID,
+    appKey: process.env.PUSHER_APP_KEY,
+    appSecret: process.env.PUSHER_APP_SECRET,
+    channelName: 'tweets',
+    eventName: 'new_tweet'
+  }
+});
+
+streamer.stream('dog', 'cat');
 
 const app = express();
 
@@ -14,7 +50,7 @@ server.listen(port);
 
 // for jspm-hot-reloader
 if (process.env.NODE_ENV !== 'production') {
-  chokidarEventEmitter({ app: server });
+  // chokidarEventEmitter({ app: server });
 }
 
 server.on('listening', () => {

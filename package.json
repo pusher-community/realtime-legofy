@@ -10,9 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.14.1",
+    "dotenv": "^1.2.0",
     "express": "^4.13.3",
     "instagram-node": "^0.5.8",
-    "pusher": "^1.0.6"
+    "pusher": "^1.0.6",
+    "pusher-twitter-streamer": "^0.2.0",
+    "twit": "^2.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.2.0",
