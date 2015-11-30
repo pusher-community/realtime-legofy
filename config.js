@@ -17,6 +17,7 @@ System.config({
     "babel": "npm:babel-core@5.8.34",
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "core-js": "npm:core-js@1.2.6",
+    "jquery": "github:components/jquery@2.1.4",
     "jspm-hot-reloader": "github:capaj/jspm-hot-reloader@master",
     "pusher": "npm:pusher-js@3.0.0",
     "github:capaj/jspm-hot-reloader@master": {
