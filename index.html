@@ -5,13 +5,13 @@
     <script src="jspm_packages/system.js"></script>
     <script src="config.js"></script>
     <script>
-      if (location.origin.match(/localhost/)) {
-        System.trace = true
+      // if (location.origin.match(/localhost/)) {
+      //   System.trace = true
 
-        System.import('jspm-hot-reloader').then(function(HotReloader) {
-          new HotReloader.default('http://localhost:3002');
-        });
-      }
+      //   System.import('jspm-hot-reloader').then(function(HotReloader) {
+      //     new HotReloader.default('http://localhost:3002');
+      //   });
+      // }
     </script>
     <script>
       System.import('app/main');

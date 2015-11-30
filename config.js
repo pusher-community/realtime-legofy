@@ -18,6 +18,7 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.34",
     "core-js": "npm:core-js@1.2.6",
     "jspm-hot-reloader": "github:capaj/jspm-hot-reloader@master",
+    "pusher": "npm:pusher-js@3.0.0",
     "github:capaj/jspm-hot-reloader@master": {
       "debug": "npm:debug@2.2.0",
       "lodash.clonedeep": "npm:lodash.clonedeep@3.0.2",
@@ -307,6 +308,10 @@ System.config({
       "randombytes": "npm:randombytes@2.0.1"
     },
     "npm:punycode@1.3.2": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:pusher-js@3.0.0": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:randombytes@2.0.1": {

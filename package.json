@@ -26,7 +26,8 @@
   },
   "jspm": {
     "dependencies": {
-      "jspm-hot-reloader": "github:capaj/jspm-hot-reloader@master"
+      "jspm-hot-reloader": "github:capaj/jspm-hot-reloader@master",
+      "pusher": "npm:pusher-js@^3.0.0"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",
