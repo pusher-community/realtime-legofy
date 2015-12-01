@@ -1,13 +1,10 @@
 import dotenv from 'dotenv';
 dotenv.load();
 
-import chokidarEventEmitter from 'chokidar-socket-emitter';
 import express from 'express';
 import http from 'http';
-
 import bodyParser from 'body-parser';
 import request from 'request';
-
 import Streamer from 'pusher-twitter-streamer';
 
 const tweetHasImage = (tweet) => {
@@ -36,7 +33,7 @@ const streamer = new Streamer({
   }
 });
 
-// streamer.stream('christmas', 'santa');
+streamer.stream('christmas', 'santa');
 
 const app = express();
 
@@ -57,11 +54,6 @@ const server = http.createServer(app);
 const port = process.env.PORT || '3002';
 
 server.listen(port);
-
-// for jspm-hot-reloader
-if (process.env.NODE_ENV !== 'production') {
-  // chokidarEventEmitter({ app: server });
-}
 
 server.on('listening', () => {
   console.log('Server listening', port);
