@@ -30,6 +30,7 @@
     "dependencies": {
       "jquery": "github:components/jquery@^2.1.4",
       "legofy": "npm:legofy@^0.1.7",
+      "lodash.throttle": "npm:lodash.throttle@^3.0.4",
       "pusher": "npm:pusher-js@^3.0.0"
     },
     "devDependencies": {

@@ -17,6 +17,7 @@ Streamer.prototype.publishFilter = (tweet) => {
   return tweetHasImage(tweet) ? tweet : undefined;
 }
 
+
 const streamer = new Streamer({
   twitter: {
     consumerKey: process.env.TWITTER_API_KEY,
@@ -33,7 +34,7 @@ const streamer = new Streamer({
   }
 });
 
-streamer.stream('christmas', 'santa');
+streamer.stream('santa', 'father christmas');
 
 const app = express();
 

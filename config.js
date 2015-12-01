@@ -19,6 +19,7 @@ System.config({
     "core-js": "npm:core-js@1.2.6",
     "jquery": "github:components/jquery@2.1.4",
     "legofy": "npm:legofy@0.1.7",
+    "lodash.throttle": "npm:lodash.throttle@3.0.4",
     "pusher": "npm:pusher-js@3.0.0",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
@@ -60,6 +61,12 @@ System.config({
     },
     "npm:legofy@0.1.7": {
       "rgbquant": "npm:rgbquant@1.1.2"
+    },
+    "npm:lodash.debounce@3.1.1": {
+      "lodash._getnative": "npm:lodash._getnative@3.9.1"
+    },
+    "npm:lodash.throttle@3.0.4": {
+      "lodash.debounce": "npm:lodash.debounce@3.1.1"
     },
     "npm:path-browserify@0.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
