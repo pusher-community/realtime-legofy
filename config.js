@@ -19,6 +19,7 @@ System.config({
     "core-js": "npm:core-js@1.2.6",
     "jquery": "github:components/jquery@2.1.4",
     "jspm-hot-reloader": "github:capaj/jspm-hot-reloader@master",
+    "legofy": "npm:legofy@0.1.7",
     "pusher": "npm:pusher-js@3.0.0",
     "github:capaj/jspm-hot-reloader@master": {
       "debug": "npm:debug@2.2.0",
@@ -247,6 +248,9 @@ System.config({
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
+    "npm:legofy@0.1.7": {
+      "rgbquant": "npm:rgbquant@1.1.2"
+    },
     "npm:lodash._baseassign@3.2.0": {
       "lodash._basecopy": "npm:lodash._basecopy@3.0.1",
       "lodash.keys": "npm:lodash.keys@3.1.2"
@@ -329,6 +333,9 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "stream-browserify": "npm:stream-browserify@1.0.0",
       "string_decoder": "npm:string_decoder@0.10.31"
+    },
+    "npm:rgbquant@1.1.2": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:ripemd160@1.0.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",

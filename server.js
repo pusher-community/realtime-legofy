@@ -6,6 +6,7 @@ import express from 'express';
 import http from 'http';
 
 import bodyParser from 'body-parser';
+import request from 'request';
 
 import Streamer from 'pusher-twitter-streamer';
 
@@ -16,7 +17,6 @@ const tweetHasImage = (tweet) => {
 }
 
 Streamer.prototype.publishFilter = (tweet) => {
-  console.log('got tweet', tweet.id);
   return tweetHasImage(tweet) ? tweet : undefined;
 }
 
@@ -36,11 +36,17 @@ const streamer = new Streamer({
   }
 });
 
-streamer.stream('dog', 'cat');
+streamer.stream('christmas', 'santa');
 
 const app = express();
 
 app.use(express.static('.'));
+app.get('/image/:id', (req, res) => {
+  const { id } = req.params;
+  const path = `http://pbs.twimg.com/media/${id}.jpg`;
+
+  request.get(path).pipe(res);
+});
 
 const server = http.createServer(app);
 
