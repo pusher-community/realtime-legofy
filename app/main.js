@@ -14,18 +14,19 @@ const processTweet = (tweet) => {
     return;
   }
 
+  const { h, w } = tweet.entities.media[0].sizes.small;
+
   const serverUrl = `/image/${id[1]}`;
 
   const template = `
-  <p>${tweet.text} from ${tweet.user.screen_name}</p>
-  <img class="no-legofy" src="${serverUrl}"></img>
-  <img class="legofy" width="600" height="500" src="${serverUrl}"></img>
+  <p class="tweet-text white light">${tweet.text} from ${tweet.user.screen_name}</p>
+  <img class="no-legofy" height=${h} width=${w} src="${serverUrl}"></img>
+  <img class="legofy" src="${serverUrl}"></img>
   `;
 
-  $('body').append(`<div>${template}</div>`);
+  $('.tweets-container').append(`<div class="tweet">${template}</div>`);
 
   const lastImage = $('img.no-legofy').last();
-  const { h, w } = tweet.entities.media[0].sizes.medium;
   const toLegofy = $('img.legofy').last();
   toLegofy.attr('height', h).attr('width', w);
   transform(toLegofy[0]);

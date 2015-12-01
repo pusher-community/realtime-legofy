@@ -38,6 +38,7 @@ streamer.stream('christmas', 'santa');
 const app = express();
 
 app.use(express.static('.'));
+app.use(express.static('assets'));
 
 // Twitter's img server doesn't allow CORS (sensible)
 // which we need to manipulate images
