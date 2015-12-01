@@ -23,8 +23,8 @@ const tweetTemplate = (tweet) => {
 
   return (`
     <div class="tweet">
-      <img style="display: none;" class="no-legofy-${tweet.id}" src="${serverUrl}" height="${height}" width="${width}" />
-      <img src="${serverUrl}" height="${height}" width="${width}" class="legofy-${tweet.id}" />
+      <img style="display: none;" class="no-legofy no-legofy-${tweet.id}" src="${serverUrl}" height="${height}" width="${width}" />
+      <img src="${serverUrl}" height="${height}" width="${width}" class="legofy legofy-${tweet.id}" />
     </div>
   `);
 };
