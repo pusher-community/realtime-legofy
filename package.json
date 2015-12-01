@@ -29,7 +29,6 @@
   "jspm": {
     "dependencies": {
       "jquery": "github:components/jquery@^2.1.4",
-      "jspm-hot-reloader": "github:capaj/jspm-hot-reloader@master",
       "legofy": "npm:legofy@^0.1.7",
       "pusher": "npm:pusher-js@^3.0.0"
     },

@@ -36,11 +36,15 @@ const streamer = new Streamer({
   }
 });
 
-streamer.stream('christmas', 'santa');
+// streamer.stream('christmas', 'santa');
 
 const app = express();
 
 app.use(express.static('.'));
+
+// Twitter's img server doesn't allow CORS (sensible)
+// which we need to manipulate images
+// so we serve them on our own server, and pipe them from Twitter
 app.get('/image/:id', (req, res) => {
   const { id } = req.params;
   const path = `http://pbs.twimg.com/media/${id}.jpg`;
