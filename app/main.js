@@ -1,18 +1,17 @@
 import Pusher from 'pusher';
 import $ from 'jquery';
-import throttle from 'lodash.throttle';
 
-import { processTweet } from './processTweet';
+import { processPicture } from './process-picture';
 
 const pusher = new Pusher('00c975725cd4801f6acc');
 
-const channel = pusher.subscribe('tweets');
+const channel = pusher.subscribe('pictures');
 
 let processing = false;
 
-channel.bind('new_tweet', throttle(processTweet, 3000));
+channel.bind('new_picture', processPicture);
 
-$('.tweets-container').on('mouseenter mouseleave', '.tweet', function() {
+$('.pictures-container').on('mouseenter mouseleave', '.picture', function() {
   $(this).find('img').toggle();
 });
 
