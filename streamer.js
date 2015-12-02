@@ -11,7 +11,7 @@ const pusher = new Pusher({
 
 const BASE_URL = `https://api.500px.com/v1`;
 
-const URL_PARAMS = `tag=christmas&sort=created_at&image_size=600&consumer_key=${process.env.FIVE_HUNDRED_PX_KEY}&exclude=14,1&tags=1`;
+const URL_PARAMS = `tag=christmas&sort=created_at&image_size=600&consumer_key=${process.env.FIVE_HUNDRED_PX_KEY}&exclude=People,Nude&tags=1`;
 
 let pictures = [];
 let pageIndex = 1;
