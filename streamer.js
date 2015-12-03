@@ -11,14 +11,15 @@ const pusher = new Pusher({
 
 const BASE_URL = `https://api.500px.com/v1`;
 
-const URL_PARAMS = `tag=christmas&sort=created_at&image_size=600&consumer_key=${process.env.FIVE_HUNDRED_PX_KEY}&exclude=People,Nude&tags=1`;
+const URL_PARAMS = `tag=christmas&sort=created_at&image_size=600&consumer_key=${process.env.FIVE_HUNDRED_PX_KEY}&exclude=People,Nude,Fashion&tags=1&rpp=100`;
 
 let pictures = [];
 let pageIndex = 1;
 let pictureIndex = 0;
 
-const url = `${BASE_URL}/photos/search?${URL_PARAMS}&page=${pageIndex}`;
 function fetchImages() {
+  const url = `${BASE_URL}/photos/search?${URL_PARAMS}&page=${pageIndex}`;
+  console.log('making req', url);
   fetch(
     url
   ).then((response) => {
@@ -42,12 +43,12 @@ function pushImage() {
   console.log('pushImage called');
   if (pictures.length === 0 || pictures.length  === pictureIndex) {
     console.log('no pictures, setting timeout', pictures.length);
-    setTimeout(pushImage, 5000);
+    setTimeout(pushImage, 2000);
     return;
   }
 
   const pic = pictures[pictureIndex];
-  console.log('Pushing to Pusher channel');
+  console.log('Pushing to Pusher channel', pictureIndex);
 
   try {
     pusher.trigger('pictures', 'new_picture', pic);
@@ -55,7 +56,7 @@ function pushImage() {
     // even if something goes wrong we need to do this
     // hence the try {} finally {}
     pictureIndex++;
-    setTimeout(pushImage, 5000);
+    setTimeout(pushImage, 2500);
   }
 
 }

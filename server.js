@@ -21,8 +21,6 @@ app.use(express.static('assets'));
 app.get('/image/*', (req, res) => {
   const rest = req.url.replace('/image/', '');
   const path = `https://drscdn.500px.org/photo/${rest}`;
-  console.log('got path', path);
-
   request.get(path).pipe(res);
 });
 

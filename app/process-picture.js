@@ -19,14 +19,14 @@ const renderPicture = (picture) => {
   $('.pictures-container').prepend(elem);
   const lastImg = document.querySelector(`.no-legofy-${picture.id}`);
   const imgToLegofy = document.querySelector(`.legofy-${picture.id}`);
-  transform(imgToLegofy);
+  transform(imgToLegofy, { factor: 0.025 });
   imgToLegofy.setAttribute('height', IMAGE_SIZE);
   imgToLegofy.setAttribute('width', IMAGE_SIZE);
 }
 
 
 export const processPicture = (picture) => {
-  console.log('got picture', picture);
+  console.log('got picture', picture.rating);
   renderPicture(picture);
 }
 

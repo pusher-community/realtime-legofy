@@ -1,5 +1,7 @@
+.pictures-container {
+  width: 110%;
+}
 .picture {
-  margin: 20px;
   display: inline-block;
 }
 
