@@ -7,8 +7,6 @@ const pusher = new Pusher('00c975725cd4801f6acc');
 
 const channel = pusher.subscribe('pictures');
 
-let processing = false;
-
 channel.bind('new_picture', processPicture);
 
 $('.pictures-container').on('mouseenter mouseleave', '.picture', function() {

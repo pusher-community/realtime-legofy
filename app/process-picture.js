@@ -17,11 +17,11 @@ const pictureTemplate = (picture) => {
 const renderPicture = (picture) => {
   const elem = $(pictureTemplate(picture));
   $('.pictures-container').prepend(elem);
-  const lastImg = document.querySelector(`.no-legofy-${picture.id}`);
-  const imgToLegofy = document.querySelector(`.legofy-${picture.id}`);
-  transform(imgToLegofy, { factor: 0.025 });
-  imgToLegofy.setAttribute('height', IMAGE_SIZE);
-  imgToLegofy.setAttribute('width', IMAGE_SIZE);
+  const lastImg = $(`.no-legofy-${picture.id}`).first();
+  const imgToLegofy = $(`.legofy-${picture.id}`).first();
+  transform(imgToLegofy[0], { factor: 0.025 });
+  imgToLegofy.attr('height', IMAGE_SIZE);
+  imgToLegofy.attr('width', IMAGE_SIZE);
 }
 
 
