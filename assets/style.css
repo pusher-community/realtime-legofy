@@ -1,8 +1,11 @@
 .pictures-container {
-  width: 110%;
+  width: 200%;
 }
 .picture {
-  display: inline-block;
+  float: left;
+  width: 1px;
+  height: 1px;
+  text-align: center;
 }
 
 .splash {
