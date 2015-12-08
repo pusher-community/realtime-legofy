@@ -14,9 +14,12 @@ const pictureTemplate = (picture) => {
   `);
 };
 
-const renderPicture = (picture) => {
+let currentRowIndex = 0;
+let numRows = Math.floor($(window).height() / 330);
+
+const addPictureToRow = (picture, rowIndex) => {
   const elem = $(pictureTemplate(picture));
-  $('.pictures-container').prepend(elem);
+  $('.pictures-row').eq(rowIndex).prepend(elem);
   const lastImg = $(`.no-legofy-${picture.id}`).first();
   const imgToLegofy = $(`.legofy-${picture.id}`).first();
   elem.animate({ width: IMAGE_SIZE, height: IMAGE_SIZE }, function() {
@@ -27,9 +30,13 @@ const renderPicture = (picture) => {
   });
 }
 
-
 export const processPicture = (picture) => {
-  renderPicture(picture);
+  addPictureToRow(picture, currentRowIndex);
+  if (currentRowIndex === numRows - 1) {
+    currentRowIndex = 0;
+  } else {
+    currentRowIndex++;
+  }
 }
 
 
