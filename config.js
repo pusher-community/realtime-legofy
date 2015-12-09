@@ -20,6 +20,7 @@ System.config({
     "jquery": "github:components/jquery@2.1.4",
     "legofy": "npm:legofy@0.1.7",
     "lodash.throttle": "npm:lodash.throttle@3.0.4",
+    "masonry": "npm:masonry-layout@3.3.2",
     "pusher": "npm:pusher-js@3.0.0",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
@@ -56,6 +57,17 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
+    "npm:doc-ready@1.0.3": {
+      "eventie": "npm:eventie@1.0.6",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:fizzy-ui-utils@1.0.1": {
+      "desandro-matches-selector": "npm:desandro-matches-selector@1.0.3",
+      "doc-ready": "npm:doc-ready@1.0.3"
+    },
+    "npm:get-size@1.2.2": {
+      "desandro-get-style-property": "npm:desandro-get-style-property@1.0.4"
+    },
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
@@ -67,6 +79,21 @@ System.config({
     },
     "npm:lodash.throttle@3.0.4": {
       "lodash.debounce": "npm:lodash.debounce@3.1.1"
+    },
+    "npm:masonry-layout@3.3.2": {
+      "fizzy-ui-utils": "npm:fizzy-ui-utils@1.0.1",
+      "get-size": "npm:get-size@1.2.2",
+      "outlayer": "npm:outlayer@1.4.2",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:outlayer@1.4.2": {
+      "desandro-get-style-property": "npm:desandro-get-style-property@1.0.4",
+      "desandro-matches-selector": "npm:desandro-matches-selector@1.0.3",
+      "doc-ready": "npm:doc-ready@1.0.3",
+      "eventie": "npm:eventie@1.0.6",
+      "fizzy-ui-utils": "npm:fizzy-ui-utils@1.0.1",
+      "get-size": "npm:get-size@1.2.2",
+      "wolfy87-eventemitter": "npm:wolfy87-eventemitter@4.3.0"
     },
     "npm:path-browserify@0.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
@@ -84,6 +111,9 @@ System.config({
     "npm:util@0.10.3": {
       "inherits": "npm:inherits@2.0.1",
       "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:wolfy87-eventemitter@4.3.0": {
+      "fs": "github:jspm/nodelibs-fs@0.1.2"
     }
   }
 });
