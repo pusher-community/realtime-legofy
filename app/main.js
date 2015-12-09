@@ -3,7 +3,7 @@ import $ from 'jquery';
 
 import { processPicture } from './process-picture';
 
-const pusher = new Pusher('00c975725cd4801f6acc');
+const pusher = new Pusher('1dd86a2d2f3cf58165ad');
 
 const channel = pusher.subscribe('pictures');
 
