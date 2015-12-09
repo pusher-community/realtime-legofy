@@ -1,6 +1,6 @@
 # Christmas Legofy with Pusher and 500px
 
-Searches the 500px API for for christmas pictures, and runs each image through [Legofy](https://github.com/Wildhoney/Legofy).
+Searches the 500px API for for christmas pictures, and runs each image through [Legofy](https://github.com/Wildhoney/Legofy). [See it running on Heroku](http://realtime-lego.herokuapp.com/).
 
 ## Running Locally
 
@@ -23,6 +23,8 @@ npm install
 npm start
 ```
 
-Visit `http://localhost:3002` and await tweets!
+Finally, update `app/main.js` with your Pusher app key.
+
+Visit `http://localhost:3002` and await pictures!
 
 
