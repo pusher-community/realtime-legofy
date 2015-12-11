@@ -56,7 +56,7 @@ function pushImage() {
     // even if something goes wrong we need to do this
     // hence the try {} finally {}
     pictureIndex++;
-    setTimeout(pushImage, 2500);
+    setTimeout(pushImage, 4000);
   }
 
 }
